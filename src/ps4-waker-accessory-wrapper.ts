@@ -18,6 +18,9 @@ export class PS4WakerAccessoryWrapper extends HomebridgeAccessoryWrapper<PS4Devi
         this.onService = this.initOnService();
         this.appServices = this.initAppServices();
         this.log(`Found device [${this.getDisplayName()}]`);
+        this.log(`Device address: ${this.device.api.opts.address}`);
+        this.log('Device Status:');
+        this.log(this.device.api.getDeviceStatus());
     }
 
     private initOnService(): any {
